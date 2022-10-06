@@ -1,0 +1,4 @@
+{% for item in maire_object_list %}
+{{ item }}
+{% endfor %}
+

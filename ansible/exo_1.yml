@@ -1,0 +1,96 @@
+---
+- name: Check exo 1 - Village
+  hosts: localhost
+  tasks:
+  - name: Verifie le Village
+    ansible.builtin.file:
+      state: directory
+      path: "{{ village_full_path }}"
+    ignore_errors: "{{ exam_mode }}"
+
+- name: Check exo 1 - Boulangerie
+  hosts: localhost
+  tasks:
+    - name: Verifie la Boulangerie
+      ansible.builtin.file:
+        state: directory
+        path: "{{ item }}"
+      loop: "{{ boulangerie_directory }}"
+
+    - name: Positione current_character
+      ansible.builtin.set_fact:
+        current_character: "{{ boulangerie_character | map(attribute='name') }}"
+
+    - name: Positione current_building
+      ansible.builtin.set_fact:
+        current_building: "{{ current_character | product(['_maison']) | map('join') | list | union(boulangerie_building) }}"
+
+    - name: Verifie les personnages de la boulangerie
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ item.path }}"
+      loop: "{{ boulangerie_character }}"
+
+    - name: Verifie les objets de la boulangerie
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ boulangerie_path }}/{{ item.path }}/{{ item.name }}"
+      loop: "{{ boulangerie_object_list }}"
+
+    - name: Cree les liens symbolique
+      ansible.builtin.file:
+        src: "../{{ item.path }}/{{ item.name }}"
+        dest: "{{ boulangerie_path }}/{{ item.target }}/{{ item.name }}"
+        state: link
+        modification_time: preserve
+        access_time: preserve
+        mode: 0777
+        follow: false
+      loop: "{{ boulangerie_object_list }}"
+  ignore_errors: "{{ exam_mode }}"
+
+- name: BOT - Verification maison
+  ansible.builtin.import_playbook: check_house.yml
+
+
+- name: Check exo 1 - Mairie
+  hosts: localhost
+  tasks:
+    - name: Verifie la Mairie
+      ansible.builtin.file:
+        state: directory
+        path: "{{ item }}"
+      loop: "{{ mairie_directory }}"
+
+    - name: Positione all_user & all_building
+      ansible.builtin.set_fact:
+        all_user: "{{ mairie_character | union(boulangerie_character) }}"
+        all_building: "{{ mairie_building | union(boulangerie_building) }}"
+
+    - name: Positione current_character
+      ansible.builtin.set_fact:
+        current_character: "{{ all_user | map(attribute='name') }}"
+
+    - name: Positione current_building
+      ansible.builtin.set_fact:
+        current_building: "{{ current_character | product(['_maison']) | map('join') | list | union(all_building) }}"
+
+    - name: Verifie les personnages de la mairie
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ item.path }}"
+      loop: "{{ mairie_character }}"
+  ignore_errors: "{{ exam_mode }}"
+
+- name: BOT - Verification maison
+  ansible.builtin.import_playbook: check_house.yml
+
+- name: Check exo 1 - Mairie
+  hosts: localhost
+  tasks:
+    - name: Verifie les objets de la mairie
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ item.path }}"
+      loop: "{{ mairie_object_list }}"
+  ignore_errors: "{{ exam_mode }}"

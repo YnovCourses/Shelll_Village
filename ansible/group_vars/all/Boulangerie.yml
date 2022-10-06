@@ -1,0 +1,37 @@
+---
+boulangerie_path: "{{ village_full_path }}/Boulangerie"
+boulangerie_room:
+  - Etalage
+  - Laboratoire
+  - Chambre-froide
+boulangerie_directory:
+  - "{{ boulangerie_path }}"
+  - "{{ boulangerie_path }}/Etalage"
+  - "{{ boulangerie_path }}/Laboratoire"
+  - "{{ boulangerie_path }}/Chambre-froide"
+boulangerie_character:
+  - src: empty.personnage
+    path: "{{ boulangerie_path }}/Laboratoire/Boulanger.personnage"
+    name: Boulanger
+  - src: empty.personnage
+    path: "{{ boulangerie_path }}/Etalage/Vendeur.personnage"
+    name: Vendeur
+boulangerie_object_list:
+  - src: empty.objet
+    path: Chambre-froide
+    name: Levure.objet
+    target: Laboratoire
+  - src: empty.objet
+    path: Chambre-froide
+    name: Jambon.objet
+    target: Laboratoire
+  - src: empty.objet
+    path: Laboratoire
+    name: Pain.objet
+    target: Etalage
+  - src: empty.objet
+    path: Laboratoire
+    name: Pain_jambon.objet
+    target: Etalage
+boulangerie_building:
+  - Boulangerie

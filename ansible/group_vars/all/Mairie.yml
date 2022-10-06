@@ -1,0 +1,23 @@
+---
+mairie_building:
+  - Mairie
+mairie_path: "{{ village_full_path }}/Mairie"
+mairie_room:
+  - Bureau
+  - Archive
+mairie_directory:
+  - "{{ mairie_path }}"
+  - "{{ mairie_path }}/Bureau"
+  - "{{ mairie_path }}/Archive"
+mairie_character:
+  - src: Maire.personnage
+    path: "{{ mairie_path }}/Bureau/Maire.personnage"
+    name: Maire
+  - src: empty.personnage
+    path: "{{ mairie_path }}/Assistant.personnage"
+    name: Assistant
+mairie_object_list:
+  - src: registre.objet
+    path: "{{ mairie_path }}/Archive/Registre.objet"
+maire_object_list:
+  - Clef du bureau

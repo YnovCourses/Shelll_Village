@@ -1,0 +1,169 @@
+---
+- name: Check exo 2 - Etape 1 - Create basics
+  hosts: localhost
+  tasks:
+  - name: Add groups ynov_campus
+    become: true
+    ansible.builtin.group:
+      name: "{{ village_name }}"
+      state: present
+
+  - name: Add user ynov_campus
+    become: true
+    ansible.builtin.user:
+      name: "{{ village_name }}"
+      group: "{{ village_name }}"
+
+- name: Check exo 2 - Etape 1 - Verifie Owner/group
+  become: true
+  hosts: localhost
+  tasks:
+    - name: Verifie les droit du village
+      ansible.builtin.file:
+        path: "{{ village_full_path }}"
+        state: directory
+        owner: "{{ village_group }}"
+        group: "{{ village_group }}"
+      ignore_errors: "{{ exam_mode }}"
+
+- name: Check exo 2 - Etape 2 - Create users & groups
+  hosts: localhost
+  tasks:
+  - name: Add groups
+    become: true
+    ansible.builtin.group:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ users_to_add }}"
+  - name: Add user
+    become: true
+    ansible.builtin.user:
+      name: "{{ item }}"
+      group: "{{ item }}"
+    loop: "{{ users_to_add }}"
+
+- name: Check exo 2 - Etape 2 - Verifie object
+  become: true
+  hosts: localhost
+  tasks:
+    - name: Verifie les objets de la boulangerie
+      ansible.builtin.file:
+        path: "{{ boulangerie_path }}/{{ item.path }}/{{ item.name }}"
+        owner: boulangerie
+        group: boulangerie
+        mode: "0660"
+      loop: "{{ boulangerie_object_list }}"
+      ignore_errors: "{{ exam_mode }}"
+    - name: Verifie les objets de la mairie
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        owner: mairie
+        group: mairie
+        mode: "0660"
+      loop: "{{ mairie_object_list }}"
+      ignore_errors: "{{ exam_mode }}"
+
+- name: Check exo 2 - Etape 2 - Verifie Building
+  become: true
+  hosts: localhost
+  tasks:
+    - name: Verifie les objets de la boulangerie
+      ansible.builtin.file:
+        path: "{{ boulangerie_path }}/{{ item.path }}/{{ item.name }}"
+        owner: boulangerie
+        group: boulangerie
+        mode: "0660"
+      loop: "{{ boulangerie_object_list }}"
+      ignore_errors: "{{ exam_mode }}"
+    - name: Verifie les objets de la mairie
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        owner: mairie
+        group: mairie
+        mode: "0660"
+      loop: "{{ mairie_object_list }}"
+      ignore_errors: "{{ exam_mode }}"
+
+- name: Check exo 2 - Boulangerie
+  hosts: localhost
+  tasks:
+    - name: Verifie la Boulangerie
+      ansible.builtin.file:
+        state: directory
+        path: "{{ item }}"
+        owner: boulangerie
+        group: boulangerie
+      loop: "{{ boulangerie_directory }}"
+
+    - name: Positione current_character
+      ansible.builtin.set_fact:
+        current_character: "{{ boulangerie_character | map(attribute='name') }}"
+
+    - name: Positione current_building
+      ansible.builtin.set_fact:
+        current_building: "{{ current_character | product(['_maison']) | map('join') | list | union(boulangerie_building) }}"
+
+    - name: Verifie les personnages de la boulangerie
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ item.path }}"
+        owner: "{{ item.name | lower }}"
+        group: "{{ item.name | lower }}"
+      loop: "{{ boulangerie_character }}"
+
+    - name: Cree les liens symbolique
+      ansible.builtin.file:
+        src: "../{{ item.path }}/{{ item.name }}"
+        dest: "{{ boulangerie_path }}/{{ item.target }}/{{ item.name }}"
+        state: link
+        modification_time: preserve
+        access_time: preserve
+        mode: 0777
+        follow: false
+        owner: boulangerie
+        group: boulangerie
+      loop: "{{ boulangerie_object_list }}"
+      
+- name: Check exo 2 - Mairie
+  hosts: localhost
+  tasks:
+    - name: Verifie la Mairie
+      ansible.builtin.file:
+        state: directory
+        path: "{{ item }}"
+        owner: mairie
+        group: mairie
+      loop: "{{ mairie_directory }}"
+
+    - name: Positione all_user & all_building
+      ansible.builtin.set_fact:
+        all_user: "{{ mairie_character | union(boulangerie_character) }}"
+        all_building: "{{ mairie_building | union(boulangerie_building) }}"
+
+    - name: Positione current_character
+      ansible.builtin.set_fact:
+        current_character: "{{ all_user | map(attribute='name') }}"
+
+    - name: Positione current_building
+      ansible.builtin.set_fact:
+        current_building: "{{ current_character | product(['_maison']) | map('join') | list | union(all_building) }}"
+
+    - name: Verifie les personnages de la mairie
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ item.path }}"
+        owner: "{{ item.name | lower }}"
+        group: "{{ item.name | lower }}"
+      loop: "{{ mairie_character }}"
+
+    - name: Verifie les objets de la mairie
+      ansible.builtin.template:
+        src: "{{ item.src }}"
+        dest: "{{ item.path }}"
+        owner: mairie
+        group: mairie
+      loop: "{{ mairie_object_list }}"
+  ignore_errors: "{{ exam_mode }}"
+
+- name: BOT - Verification maison
+  ansible.builtin.import_playbook: check_house_exo_2.yml

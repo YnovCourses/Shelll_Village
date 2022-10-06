@@ -1,0 +1,3 @@
+---
+habitants: {{ current_character }}
+batiments: {{ current_building }}

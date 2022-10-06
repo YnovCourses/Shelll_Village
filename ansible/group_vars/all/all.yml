@@ -1,0 +1,17 @@
+---
+exam_mode: false
+
+village_path: /home/ynov
+
+village_name: ynov_campus
+village_full_path: "{{ village_path }}/{{ village_name }}"
+village_group: "{{ village_name }}"
+
+
+users_to_add:
+  - boulanger
+  - maire
+  - vendeur
+  - boulangerie
+  - mairie
+  - assistant
