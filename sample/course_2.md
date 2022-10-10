@@ -54,7 +54,15 @@ Afin de rendre les acces plus correct, nous allons renforcer la securité du vil
 Nous allons créer les users & groups associé au batiment des villages. Quand on va devoir ajouter un groupe ou un user.
 Pour simplifier les choses, on va créer le groupe et le user à chaque fois.
 Les object doivent appartenir au batiment dans lesquels ils sont.
-Les fichiers .personnages doivent appartenir a leurs propre user/group.
+Les fichiers .personnages doivent appartenir à leurs propre user/group.
 
    - Creation des groupes Boulangerie, Mairie, Archives
    - Creation des users Boulanger, Vendeur, Maire, Assitant
+
+## Etape 3
+Nous allons copier le village ynov pour créer ynov_alt.
+
+   - Creation des groupes Boulangerie, Mairie, Archives en suffixant par _alt
+   - Creation des users Boulanger, Vendeur, Maire, Assitant en suffixant par _alt
+
+🔑 N'oubliez pas le registre !
