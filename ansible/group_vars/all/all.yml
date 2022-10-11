@@ -9,9 +9,9 @@ village_group: "{{ village_name }}"
 
 
 users_to_add:
-  - boulanger
-  - maire
-  - vendeur
-  - boulangerie
-  - mairie
-  - assistant
+  - Boulanger
+  - Maire
+  - Vendeur
+  - Boulangerie
+  - Mairie
+  - Assistant
