@@ -17,8 +17,8 @@ les règles sont les suivantes.
  
 ## Etape 0
 
-Utiliser le fichier help_1.md pour avoir la liste des commandes utilisables durant ce tp.
-Vous êtes libre d'utiliser tout ce que vous connaissez, le fichier help_1.md est juste la pour aider.
+Utiliser les fichiers shell.md & cmd_to_learn.md pour avoir la liste des commandes utilisables durant ce tp.
+Vous êtes libre d'utiliser tout ce que vous connaissez, les fichiers shell.md & cmd_to_learn.md sont juste la pour aider.
 
 ### Etape 1
 
