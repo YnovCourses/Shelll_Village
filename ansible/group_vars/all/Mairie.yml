@@ -18,6 +18,6 @@ mairie_character:
     name: Assistant
 mairie_object_list:
   - src: registre.objet
-    path: "{{ mairie_path }}/Archive/Registre.objet"
+    path: "{{ mairie_path }}/Archive/registre.objet"
 maire_object_list:
   - Clef du bureau
