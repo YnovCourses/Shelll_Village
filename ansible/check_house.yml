@@ -6,6 +6,4 @@
       ansible.builtin.file:
         state: directory
         path: "{{ village_full_path }}/{{ item }}_maison"
-        owner: "{{ item | default(omit) }}"
-        group: "{{ item.name | default(omit) }}"
       loop: "{{ current_character }}"
