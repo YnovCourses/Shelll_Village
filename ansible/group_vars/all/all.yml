@@ -3,7 +3,7 @@ exam_mode: false
 
 village_path: /home/ynov/example
 
-village_name: ynov_campus
+village_name: Ynov_campus
 village_full_path: "{{ village_path }}/{{ village_name }}"
 village_group: "{{ village_name }}"
 
