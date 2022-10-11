@@ -36,7 +36,7 @@ Le maire tient un registre des citoyens & des batiments.
 * Création des personnages suivants:
   * Maire dans le bureau
   * Assistant dans la mairie
-* Ajouter au Maire l'objet **Clef du bureau** (ajouter un objet veut dire ajouter une ligne dans le fichier maire.personange)
+* Ajouter au Maire l'objet **Clef du bureau** (ajouter un objet veut dire ajouter une ligne dans le fichier Maire.personnage)
 * Ajout des objets suivant dans la salle Archive:
   * registre.objet. ce fichier est un fichier de structure de données au format yaml.
   
