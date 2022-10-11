@@ -19,19 +19,19 @@ boulangerie_character:
 boulangerie_object_list:
   - src: empty.objet
     path: Chambre-froide
-    name: Levure.objet
+    name: levure.objet
     target: Laboratoire
   - src: empty.objet
     path: Chambre-froide
-    name: Jambon.objet
+    name: jambon.objet
     target: Laboratoire
   - src: empty.objet
     path: Laboratoire
-    name: Pain.objet
+    name: pain.objet
     target: Etalage
   - src: empty.objet
     path: Laboratoire
-    name: Pain_jambon.objet
+    name: pain_jambon.objet
     target: Etalage
 boulangerie_building:
   - Boulangerie
