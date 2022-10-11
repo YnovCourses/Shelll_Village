@@ -17,6 +17,8 @@ La verification & correction de ces étapes seront faite via un robot qui a ét�
 Vous allez devoir fournir un script shell sur cette organisation => https://github.com/orgs/YnovCourses/repositories.
 Merci de créer un répertoire par étudiant ou groupe d'étudiants.
 
+Le script shell `village_advance.sh` doit est le point d'entré du programme.
+
 # Utilisation des commandes shell 
 
 ## Creation d'un village

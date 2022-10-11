@@ -11,14 +11,14 @@ Pour ce faire, nous allons considerer que le home du user **ynov** sera la ou no
 les règles sont les suivantes.
 
 * un répertoire est un espace physique ou nous pouvons nous rendre (village, habitation, etc)
-* un fichier est un élement (personne, object..) et peut avoir un contenu. Il doit avec une extension en fontion du type. Par exemple, une personnage qui s'apelle toto, sera representé par le fichier toto.personnage.
+* un fichier est un élement (personne, object..) et peut avoir un contenu. Il doit avec une extension en fonction du type. Par exemple, une personnage qui s'apelle toto, sera representé par le fichier toto.personnage.
 * les personanges peuvent avoir des objets dans le contenu du fichier.
 * le user Ynov (nous sommes connecté avec) est un spectateur. Il a cependant des droits fort sur **/home/ynov**. Faites attention au droit et user de vos ficiher (ynov:ynov 644).
  
 ## Etape 0
 
-Utiliser le fichier help_1.md pour avoir la liste des commandes utilisables durant ce tp.
-Vous êtes libre d'utiliser tout ce que vous connaissez, le fichier help_1.md est juste la pour aider.
+Utiliser les fichiers shell.md & cmd_to_learn.md pour avoir la liste des commandes utilisables durant ce tp.
+Vous êtes libre d'utiliser tout ce que vous connaissez, les fichiers shell.md & cmd_to_learn.md sont juste la pour aider.
 
 ### Etape 1
 
