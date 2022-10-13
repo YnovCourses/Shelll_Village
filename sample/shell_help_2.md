@@ -28,6 +28,14 @@ git remote # Permet de gerer les remotes
 
 ## Bot ansible
 Pour installer ansible ```pip install ansible```
+
+Vous devez modifier une variable dans ``ansible/group_vars/all/all.yml`` pour que cela soit correct. Le script est basé pour etre lancé dans /home/ynov/**votre_repo_git**.
+
+Dans le fichier yaml, de mon example, le nom de mon repo git est **example**, donc il va falloir le modifier avec le nom de votre repo.
+````YAML
+village_path: /home/ynov/example
+````
+
 Pour lancer le playbook ``ansible-playbook exo_1.yml --diff -vv`` le ``--diff`` permet d'afficher les différences, et le ``-vv`` permet d'augmenter la verbosité.
 
 
