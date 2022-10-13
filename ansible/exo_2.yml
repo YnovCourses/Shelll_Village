@@ -14,6 +14,14 @@
       name: "{{ village_name }}"
       group: "{{ village_name }}"
 
+  - name: Verifie Ynov
+    become: true
+    ansible.builtin.user:
+      name: ynov
+      group: ynov
+      groups: [Boulanger, Boulangerie, Vendeur, Ynov_Campus, Mairie, Maire, Assistant, Archives]
+      append: true
+
   - name: Add groups Archive
     become: true
     ansible.builtin.group:
