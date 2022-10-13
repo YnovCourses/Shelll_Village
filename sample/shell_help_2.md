@@ -1,5 +1,36 @@
 # Aide globale
 
+## git
+
+``git`` est un gestionnaire de code, vous devez connaître ces commandes basiques
+
+````Shell
+git status  # Permet de voir l'etat de son git local
+
+git add # Permet d'ajouter des fichiers
+
+git rm # Permet d'enlever des fichiers
+
+git commit  # Permet de créer le commit
+
+git fetch # Permet de sync le remote
+
+git pull # Permet de récuperer les sources
+
+git merge # Permet de faire converger deux historiques
+
+git diff # Permet d'afficher le delta
+
+git rebase # Permet de remettre ces commits au dessus de l'historiue
+
+git remote # Permet de gerer les remotes
+````
+
+## Bot ansible
+Pour installer ansible ```pip install ansible```
+Pour lancer le playbook ``ansible-playbook exo_1.yml --diff -vv`` le ``--diff`` permet d'afficher les différences, et le ``-vv`` permet d'augmenter la verbosité.
+
+
 ## Aide generique
 
 Il existe toujours 2 moyens sur un os pour avoir de l'aide sur une commande
