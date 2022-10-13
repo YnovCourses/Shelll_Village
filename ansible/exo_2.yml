@@ -49,16 +49,16 @@
     - name: Verifie les objets de la boulangerie
       ansible.builtin.file:
         path: "{{ boulangerie_path }}/{{ item.path }}/{{ item.name }}"
-        owner: boulangerie
-        group: boulangerie
+        owner: Boulangerie
+        group: Boulangerie
         mode: "0660"
       loop: "{{ boulangerie_object_list }}"
       ignore_errors: "{{ exam_mode }}"
     - name: Verifie les objets de la mairie
       ansible.builtin.file:
         path: "{{ item.path }}"
-        owner: mairie
-        group: mairie
+        owner: Mairie
+        group: Mairie
         mode: "0660"
       loop: "{{ mairie_object_list }}"
       ignore_errors: "{{ exam_mode }}"
@@ -70,16 +70,16 @@
     - name: Verifie les objets de la boulangerie
       ansible.builtin.file:
         path: "{{ boulangerie_path }}/{{ item.path }}/{{ item.name }}"
-        owner: boulangerie
-        group: boulangerie
+        owner: Boulangerie
+        group: Boulangerie
         mode: "0660"
       loop: "{{ boulangerie_object_list }}"
       ignore_errors: "{{ exam_mode }}"
     - name: Verifie les objets de la mairie
       ansible.builtin.file:
         path: "{{ item.path }}"
-        owner: mairie
-        group: mairie
+        owner: Mairie
+        group: Mairie
         mode: "0660"
       loop: "{{ mairie_object_list }}"
       ignore_errors: "{{ exam_mode }}"
@@ -91,8 +91,8 @@
       ansible.builtin.file:
         state: directory
         path: "{{ item }}"
-        owner: boulangerie
-        group: boulangerie
+        owner: Boulangerie
+        group: Boulangerie
       loop: "{{ boulangerie_directory }}"
 
     - name: Positione current_character
@@ -120,8 +120,8 @@
         access_time: preserve
         mode: 0777
         follow: false
-        owner: boulangerie
-        group: boulangerie
+        owner: Boulangerie
+        group: Boulangerie
       loop: "{{ boulangerie_object_list }}"
       
 - name: Check exo 2 - Mairie
@@ -131,8 +131,8 @@
       ansible.builtin.file:
         state: directory
         path: "{{ item }}"
-        owner: mairie
-        group: mairie
+        owner: Mairie
+        group: Mairie
       loop: "{{ mairie_directory }}"
 
     - name: Positione all_user & all_building
@@ -160,8 +160,8 @@
       ansible.builtin.template:
         src: "{{ item.src }}"
         dest: "{{ item.path }}"
-        owner: mairie
-        group: mairie
+        owner: Mairie
+        group: Mairie
       loop: "{{ mairie_object_list }}"
   ignore_errors: "{{ exam_mode }}"
 
