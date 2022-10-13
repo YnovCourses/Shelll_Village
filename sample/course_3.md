@@ -35,7 +35,7 @@ Votre script va devoir
 - ajouter le fichier random_text dans le repo cloner
 - récuperer ce fichier https://www.elastic.co/guide/en/elasticsearch/reference/8.4/release-notes-8.4.3.html
 - récuperer ce fichier https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.4.3-darwin-x86_64.tar.gz
-- Faire des 4 etapes precedent un zip
+- Faire des 4 etapes precedentes un zip
 - afficher le nom du physical volume
 - afficher l'uuid du volume group
 - afficher le path du lv root
