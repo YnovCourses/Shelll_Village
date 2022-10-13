@@ -118,3 +118,34 @@ On peut voir la liste des services avec ````systemctl````
 Pour voir l'etat d'un process ````systemctl status sshd````, pour le stop, start, restart ``systemctl stop|start|restart sshd``
 
 Par default, les logs d'un service est dans /var/log/message (sur centos) /var/log/syslog sur debian (je crois). Mais un service peut logger ou bon lui semble en fonction de sa configuration et de son exec
+
+
+## Creer une library shell
+
+Cela permet de créer une librairie avec des fonctions et de les appellers dans votre code.
+
+````SHELL
+
+#!/bin/bash
+
+UselessFunction() {
+    pwd
+}
+
+UselessFunctionWithParameter() {
+    echo "$1"
+}
+````
+
+Voici votre lib, sauvegarder la en my_lib.sh et ensuite un fichier shell
+
+````Shell
+#!/bin/bash
+
+.  /home/ynov/my_lib.sh # . = source
+
+UselessFunction
+
+UselessFunctionWithParameter "Random_text"
+
+````
