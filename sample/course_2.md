@@ -41,7 +41,7 @@ Utiliser le fichier cmd_to_learn.md pour avoir la liste des commandes utilisable
 ## Etape 1
 Afin de rendre les acces plus correct, nous allons renforcer la securité du village. Nous allons créer des groupes et des users.
 
- - Creation des groupes et users ynov_campus
+ - Creation des groupes et users Ynov_campus
  - Changement des users/groupes du village
  - Passage du folder en mode recursif avec la restriction suivante:
    - le users peut lire, executer et ecrire.
