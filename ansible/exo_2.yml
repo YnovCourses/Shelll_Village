@@ -19,7 +19,7 @@
     ansible.builtin.user:
       name: ynov
       group: ynov
-      groups: [Boulanger, Boulangerie, Vendeur, Ynov_campus, Mairie, Maire, Assistant, Archives]
+      groups: [Boulanger, Boulangerie, Vendeur, Ynov_campus, Mairie, Maire, Assistant, Archive]
       append: true
 
   - name: Add groups Archive
