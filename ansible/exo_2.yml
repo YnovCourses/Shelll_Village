@@ -35,7 +35,6 @@
       group: Archive
 
 - name: Check exo 2 - Etape 1 - Verifie Owner/group
-  become: true
   hosts: localhost
   tasks:
     - name: Verifie les droit du village
@@ -64,7 +63,6 @@
     loop: "{{ users_to_add }}"
 
 - name: Check exo 2 - Etape 2 - Verifie object
-  become: true
   hosts: localhost
   tasks:
     - name: Verifie les objets de la boulangerie
@@ -85,7 +83,6 @@
       ignore_errors: "{{ exam_mode }}"
 
 - name: Check exo 2 - Etape 2 - Verifie Building
-  become: true
   hosts: localhost
   tasks:
     - name: Verifie les objets de la boulangerie
@@ -106,7 +103,6 @@
       ignore_errors: "{{ exam_mode }}"
 
 - name: Check exo 2 - Boulangerie
-  become: true
   hosts: localhost
   tasks:
     - name: Verifie la Boulangerie
@@ -147,7 +143,6 @@
       loop: "{{ boulangerie_object_list }}"
       
 - name: Check exo 2 - Mairie
-  become: true
   hosts: localhost
   tasks:
     - name: Verifie la Mairie
