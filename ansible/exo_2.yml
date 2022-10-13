@@ -14,6 +14,18 @@
       name: "{{ village_name }}"
       group: "{{ village_name }}"
 
+  - name: Add groups Archive
+    become: true
+    ansible.builtin.group:
+      name: Archive
+      state: present
+
+  - name: Add user Archive
+    become: true
+    ansible.builtin.user:
+      name: Archive
+      group: Archive
+
 - name: Check exo 2 - Etape 1 - Verifie Owner/group
   become: true
   hosts: localhost
