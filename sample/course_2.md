@@ -60,12 +60,12 @@ Les fichiers .personnages doivent appartenir à leurs propre user/group.
 Les maisons doivent appartenir à leurs propriétaire
 
    - Creation des groupes Boulangerie, Mairie, Archive
-   - Creation des users Boulanger, Vendeur, Maire, Assitant
+   - Creation des users Boulanger, Vendeur, Maire, Assistant
 
 ## Etape 3
 Nous allons copier le village ynov pour créer ynov_alt.
 
    - Creation des groupes Boulangerie, Mairie, Archive en suffixant par _alt
-   - Creation des users Boulanger, Vendeur, Maire, Assitant en suffixant par _alt
+   - Creation des users Boulanger, Vendeur, Maire, Assistant en suffixant par _alt
 
 🔑 N'oubliez pas le registre !
