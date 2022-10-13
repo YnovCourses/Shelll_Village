@@ -23,7 +23,7 @@ Vous êtes libre d'utiliser tout ce que vous connaissez, les fichiers shell.md &
 ### Etape 1
 
 Le village à besoin d'une Mairie pour recenser les habitants.
-La mairie est un batiment comprenant 2 salles, Le bureau du maire, les archives
+La mairie est un batiment comprenant 2 salles, Le bureau du maire, les archive
 Deux personnes sont dans la mairie, le maire et l'assistant.
 Le maire tient un registre des citoyens & des batiments.
 

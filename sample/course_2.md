@@ -58,13 +58,13 @@ Pour simplifier les choses, on va créer le groupe et le user à chaque fois.
 Les object doivent appartenir au batiment dans lesquels ils sont.
 Les fichiers .personnages doivent appartenir à leurs propre user/group.
 
-   - Creation des groupes Boulangerie, Mairie, Archives
+   - Creation des groupes Boulangerie, Mairie, Archive
    - Creation des users Boulanger, Vendeur, Maire, Assitant
 
 ## Etape 3
 Nous allons copier le village ynov pour créer ynov_alt.
 
-   - Creation des groupes Boulangerie, Mairie, Archives en suffixant par _alt
+   - Creation des groupes Boulangerie, Mairie, Archive en suffixant par _alt
    - Creation des users Boulanger, Vendeur, Maire, Assitant en suffixant par _alt
 
 🔑 N'oubliez pas le registre !
