@@ -107,8 +107,8 @@
       ansible.builtin.template:
         src: "{{ item.src }}"
         dest: "{{ item.path }}"
-        owner: "{{ item.name | lower }}"
-        group: "{{ item.name | lower }}"
+        owner: "{{ item.name }}"
+        group: "{{ item.name }}"
       loop: "{{ boulangerie_character }}"
 
     - name: Cree les liens symbolique
@@ -152,8 +152,8 @@
       ansible.builtin.template:
         src: "{{ item.src }}"
         dest: "{{ item.path }}"
-        owner: "{{ item.name | lower }}"
-        group: "{{ item.name | lower }}"
+        owner: "{{ item.name }}"
+        group: "{{ item.name }}"
       loop: "{{ mairie_character }}"
 
     - name: Verifie les objets de la mairie
