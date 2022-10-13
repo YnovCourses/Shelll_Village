@@ -41,7 +41,7 @@ Votre script va devoir
 - afficher le path du lv root
 - afficher le nombre de paquet perdu en ping 8.8.8.8
 - afficher si le flux entre la machine est 8.8.8.8 sur le port 443 est ouvert
-- Faire passer un train
+- faire passer un train
 - afficher l'heure
 
 ## bonus
