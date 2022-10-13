@@ -1,6 +1,7 @@
 ---
 - name: Check House
   hosts: localhost
+  become: true
   tasks:
     - name: Verifie les maisons
       ansible.builtin.file:

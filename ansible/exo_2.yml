@@ -39,6 +39,7 @@
       ignore_errors: "{{ exam_mode }}"
 
 - name: Check exo 2 - Etape 2 - Create users & groups
+  become: true
   hosts: localhost
   tasks:
   - name: Add groups
@@ -97,6 +98,7 @@
       ignore_errors: "{{ exam_mode }}"
 
 - name: Check exo 2 - Boulangerie
+  become: true
   hosts: localhost
   tasks:
     - name: Verifie la Boulangerie
@@ -137,6 +139,7 @@
       loop: "{{ boulangerie_object_list }}"
       
 - name: Check exo 2 - Mairie
+  become: true
   hosts: localhost
   tasks:
     - name: Verifie la Mairie
