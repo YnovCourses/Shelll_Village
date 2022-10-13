@@ -57,6 +57,7 @@ Nous allons créer les users & groups associé au batiment des villages. Quand o
 Pour simplifier les choses, on va créer le groupe et le user à chaque fois.
 Les object doivent appartenir au batiment dans lesquels ils sont.
 Les fichiers .personnages doivent appartenir à leurs propre user/group.
+Les maisons doivent appartenir à leurs propriétaire
 
    - Creation des groupes Boulangerie, Mairie, Archive
    - Creation des users Boulanger, Vendeur, Maire, Assitant
