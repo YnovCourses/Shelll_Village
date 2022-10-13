@@ -5,8 +5,9 @@ Le but de cette séance est de vous faire découvrir/utiliser de nouvelle comman
 ## Rendu
 Le script shell `check_shell.sh` doit est le point d'entré du programme.
 Vous devez pour chaque tache afficher sur la meme ligne:
-`le nom | sa durée d'execution` exemple  `afficher le nombre de group avec gid impair | 0.0s`
+`le nom | sa durée d'execution` exemple  `ajouter votre nom dans le prompt linux | 0.0s`
 Pour toutes taches s'appelant afficher, votre script doit fournir la valeur demandé.
+`afficher le nombre de group avec gid impair | 100 | 0.0s`
 La sortie attendue est sur stdout
 
 ## Creation d'un script au chrono.
