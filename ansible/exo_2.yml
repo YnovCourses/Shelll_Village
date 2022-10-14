@@ -14,14 +14,6 @@
       name: "{{ village_name }}"
       group: "{{ village_name }}"
 
-  - name: Verifie Ynov
-    become: true
-    ansible.builtin.user:
-      name: ynov
-      group: ynov
-      groups: [Boulanger, Boulangerie, Vendeur, Ynov_campus, Mairie, Maire, Assistant, Archive]
-      append: true
-
   - name: Add groups Archive
     become: true
     ansible.builtin.group:
@@ -33,17 +25,6 @@
     ansible.builtin.user:
       name: Archive
       group: Archive
-
-- name: Check exo 2 - Etape 1 - Verifie Owner/group
-  hosts: localhost
-  tasks:
-    - name: Verifie les droit du village
-      ansible.builtin.file:
-        path: "{{ village_full_path }}"
-        state: directory
-        owner: "{{ village_group }}"
-        group: "{{ village_group }}"
-      ignore_errors: "{{ exam_mode }}"
 
 - name: Check exo 2 - Etape 2 - Create users & groups
   become: true
@@ -61,6 +42,26 @@
       name: "{{ item }}"
       group: "{{ item }}"
     loop: "{{ users_to_add }}"
+
+  - name: Verifie Ynov
+    become: true
+    ansible.builtin.user:
+      name: ynov
+      group: ynov
+      groups: [ Boulanger, Boulangerie, Vendeur, Ynov_campus, Mairie, Maire, Assistant, Archive ]
+      append: true
+
+
+- name: Check exo 2 - Etape 1 - Verifie Owner/group
+  hosts: localhost
+  tasks:
+    - name: Verifie les droit du village
+      ansible.builtin.file:
+        path: "{{ village_full_path }}"
+        state: directory
+        owner: "{{ village_group }}"
+        group: "{{ village_group }}"
+      ignore_errors: "{{ exam_mode }}"
 
 - name: Check exo 2 - Etape 2 - Verifie object
   hosts: localhost
