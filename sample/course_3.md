@@ -17,7 +17,7 @@ Vous serez noter sur le resultat du script ainsi que sur son temps d'execution.
 
 Votre script va devoir
 
-- afficher l'heure
+- afficher l'heure au format "00:00:00"
 - afficher le nombre d'user avec un uid pair
 - afficher le nombre de group avec gid impair
 - afficher le nombre de fichier
@@ -42,7 +42,7 @@ Votre script va devoir
 - afficher le nombre de paquet perdu en ping 8.8.8.8
 - afficher si le flux entre la machine est 8.8.8.8 sur le port 443 est ouvert
 - faire passer un train
-- afficher l'heure
+- afficher l'heure "00:00:00"
 
 ## bonus
 - afficher en couleur
