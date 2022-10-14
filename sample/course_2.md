@@ -63,7 +63,7 @@ Les maisons doivent appartenir à leurs propriétaire
    - Creation des users Boulanger, Vendeur, Maire, Assistant
 
 ## Etape 3
-Nous allons copier le village ynov pour créer ynov_alt.
+Nous allons copier le village Ynov_campus pour créer ynov_alt.
 
    - Creation des groupes Boulangerie, Mairie, Archive en suffixant par _alt
    - Creation des users Boulanger, Vendeur, Maire, Assistant en suffixant par _alt
