@@ -18,7 +18,7 @@ Le script shell `create_trash_service.sh` doit est le point d'entré du programm
 ## Réalisation d'une corbeille
 le but de se service est supprimer le contenu du répertoire /trash en respectant les conditions suivante
 
-- les fichiers doivent etre vieux d'au moins ainsi que son contenu 2 jours
+- les fichiers doivent etre vieux d'au moins 2 jours ainsi que son contenu
 - les repertoire doivent être vide
 - Si un fichier est supérieur à 200Mo, il doit etre supprimé directement
 - Si le fichier vient de /tmp, il est supprimé directement
