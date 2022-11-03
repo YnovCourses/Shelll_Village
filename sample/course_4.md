@@ -7,6 +7,13 @@ Le but de cette séance est de vous faire découvrir/utiliser de nouvelle comman
 Le but de cet exercice est de créer un service linux (daemon), qui tourne tout le temps.
 Ce dernier est surveillé par l'os lui meme. Le nom du service est ``my_trash``. Il doit être lancé au boot de l'os.
 
+## Format du rendu
+
+Vous allez devoir fournir un script shell sur cette organisation => https://github.com/orgs/YnovCourses/repositories.
+Merci de créer un répertoire par étudiant ou groupe d'étudiants.
+
+Le script shell `create_trash_service.sh` doit est le point d'entré du programme.
+
 
 ## Réalisation d'une corbeille
 le but de se service est supprimer le contenu du répertoire /trash en respectant les conditions suivante
