@@ -20,13 +20,13 @@ le but de se service est supprimer le contenu du répertoire /trash en respectan
 
 - les fichiers doivent etre vieux d'au moins 2 jours
 - les repertoire doivent être vide
-- Si un fichier est supérieux à 200Mo, il doit etre supprimé directement
+- Si un fichier est supérieur à 200Mo, il doit etre supprimé directement
 - Si le fichier vient de /tmp, il est supprimé directement
 - Si le fichier vient de root:root, il faut une commande spécial pour le supprimer
 
 ## Actionnement
 La commande rm doit etre aliassé pour mettre le tout dans la corbeille
-La commande my_trash doit etre crée et permet delancer la corbeille
+La commande my_trash doit etre crée et permet de lancer la corbeille
 Le shell du service doit etre une boucle infinie qui verifie la corbeille toutes les heures.
 La commande my_trash et l'allias doivent etre chargé pour le user à la connexion
 
