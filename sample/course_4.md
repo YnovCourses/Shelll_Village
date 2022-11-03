@@ -29,6 +29,7 @@ La commande rm doit etre aliassé pour mettre le tout dans la corbeille
 La commande my_trash doit etre crée et permet de lancer la corbeille
 Le shell du service doit etre une boucle infinie qui verifie la corbeille toutes les heures.
 La commande my_trash et l'allias doivent etre chargé pour le user à la connexion
+Vous ne devez pas gerer le fait de supprimer plusieurs fichier en meme temps avec la commande rm.
 
 ## Bonus
 - service de type fork
